@@ -21,7 +21,7 @@ Create a `download script`_ for `Project Gutenberg`_ texts, and fetch them.
 
 .. code:: shell
 
-    cd texts && ../code/get-texts   
+ cd texts && ../code/get-texts   
 
 Clean_ the Project Gutenberg headers from the texts. 
 Remove_ afterwards, the ends, etc. from the texts. 
@@ -33,9 +33,17 @@ Remove_ afterwards, the ends, etc. from the texts.
 
 .. code:: shell
 
-    cd texts
-    for i in *; do 
-        ../code/clean-gutenberg-headers $i \
-        | ../code/clean-baum-tails \
-        > ../intermediate/no-headers/"$i"
-    done
+ cd texts
+ for i in *; do 
+     ../code/clean-gutenberg-headers $i \
+     | ../code/clean-baum-tails \
+     > ../intermediate/no-headers/"$i"
+ done
+
+
+Confirm that we have the right idea for extracting chapters:
+
+.. code:: shell
+
+ cd intermediate/no-headers
+ grep  -i -e '^chapter ' -e '^[0-9]\+\.' * | less
