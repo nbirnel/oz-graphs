@@ -13,9 +13,9 @@ I followed Wikipedia's lead_.
 
 .. _lead: https://en.wikipedia.org/wiki/List_of_Oz_books#The_original_and_canonical_Oz_books_by_L._Frank_Baum>
 
-Create a `download script_` for `Project Gutenberg_` texts, and download them.
+Create a `download script`_ for `Project Gutenberg`_ texts, and download them.
 
-.. download script: ./code/get-texts>`
+.. _download script: ./code/get-texts>`
 
-.. Project Gutenberg: https://www.gutenberg.org/
+.. _Project Gutenberg: https://www.gutenberg.org/
 
