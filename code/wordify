@@ -1,0 +1,4 @@
+#!/bin/sed -f
+s/\([^A-Za-z]\)'/\1/g          # Single quotes not embedded in a word
+s/\([^-A-Za-z']\| \)\+/\n/g    
+s/--/\n/g                      # double hyphens used as em dashes

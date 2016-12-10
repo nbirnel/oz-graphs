@@ -1,0 +1,9 @@
+#!/bin/sh
+
+gutenberg="$1"
+base="$(basename "$gutenberg" .txt)"
+
+./clean-gutenberg-headers "$gutenberg" |\
+./wordify |\
+grep '[A-Z]' |\
+sort -u >"$base.caps"
