@@ -1,3 +1,6 @@
 #!/bin/sed -f
 1,/\*\*\* START OF THIS PROJECT GUTENBERG EBOOK /d
 /\*\*\* END OF THIS PROJECT GUTENBERG EBOOK /,$d
+/End of the Project Gutenberg EBook of /,$d
+/End of Project Gutenberg's /,$d
+/^Produced by /d

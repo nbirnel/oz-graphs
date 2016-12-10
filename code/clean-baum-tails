@@ -1,0 +1,5 @@
+#!/bin/sed -f
+/^THE END/,$d
+/^The Wonderful Oz Books/,$d
+/^THE FAMOUS OZ BOOKS/,$d
+

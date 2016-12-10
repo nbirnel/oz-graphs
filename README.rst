@@ -13,9 +13,29 @@ I followed Wikipedia's lead_.
 
 .. _lead: https://en.wikipedia.org/wiki/List_of_Oz_books#The_original_and_canonical_Oz_books_by_L._Frank_Baum>
 
-Create a `download script`_ for `Project Gutenberg`_ texts, and download them.
+Create a `download script`_ for `Project Gutenberg`_ texts, and fetch them.
 
 .. _download script: ./code/get-texts>`
 
 .. _Project Gutenberg: https://www.gutenberg.org/
 
+.. code:: shell
+
+    cd texts && ../code/get-texts   
+
+Clean_ the Project Gutenberg headers from the texts. 
+Remove_ afterwards, the ends, etc. from the texts. 
+
+
+.. _Clean: ./code/clean-gutenberg-headers
+
+.. _Remove: ./code/clean-book-tails
+
+.. code:: shell
+
+    cd texts
+    for i in *; do 
+        ../code/clean-gutenberg-headers $i \
+        | ../code/clean-baum-tails \
+        > ../intermediate/no-headers/"$i"
+    done
