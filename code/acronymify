@@ -1,0 +1,3 @@
+#!/bin/sed -f
+s/\([^[:alpha:]]\+[[:alpha:]]\)[[:alpha:]]*$/\1/g   #abbr the last word
+s/\([[:alpha:]]\)[[:alpha:]]*[^[:alpha:]]\+/\1/g     #abbr all other words
