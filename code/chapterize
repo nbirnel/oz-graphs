@@ -1,0 +1,17 @@
+#!/usr/bin/awk -f
+
+BEGIN { 
+    chapter = 0
+}
+
+/^[0-9]+\./ { start_chapter() }
+/^Chapter / { start_chapter() }
+/^CHAPTER / { start_chapter() }
+{ if (printable == 1){ print $0 >fmt_chapter }}
+
+function start_chapter() {
+    printable = 1
+    chapter++
+    fmt_chapter = sprintf("chapter_%02d", chapter)
+}
+
