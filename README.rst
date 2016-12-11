@@ -56,6 +56,7 @@ No harm done.
 Make chapters:
 
 .. code:: shell
+
  cd intermediate/no_headers
  for i in * ; do
      base=$(basename $i .txt)
