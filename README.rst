@@ -3,8 +3,8 @@ Oz Graphs
 
 Playing with data extraction and graphing of L. Frank Baum's Oz books.
 
-Procedure
----------
+Finding and Prepping the Texts
+------------------------------
 Assemble a canonical list_ of the Oz books. 
 
 .. _list: ./intermediate/bibliography.txt
@@ -34,12 +34,15 @@ Remove_ afterwards, the ends, etc. from the texts.
 .. code:: shell
 
  cd texts
- for i in *; do 
+ for i in \*; do 
      ../code/clean-gutenberg-headers $i \
      | ../code/clean-baum-tails \
      > ../intermediate/no-headers/"$i"
  done
 
+
+Break into chapters
+-------------------
 
 Confirm that we have the right idea for extracting chapters:
 
@@ -47,3 +50,11 @@ Confirm that we have the right idea for extracting chapters:
 
  cd intermediate/no-headers
  grep  -i -e '^chapter ' -e '^[0-9]\+\.' * | less
+
+At this point,
+I realize that there was no point in cleaning anything before the first
+chapter heading. 
+No harm done.
+
+
+
