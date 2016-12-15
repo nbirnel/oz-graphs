@@ -66,3 +66,26 @@ Make chapters:
      )
  done
  cd -
+
+Make a word list
+----------------
+
+Our first step in finding all of the people in the Oz books.
+
+.. code:: shell
+
+ ./code/wordify intermediate/chapters/[0-9][0-9]_*/chapter_[0-9][0-9] |\
+  grep '[[:upper:]]' |\
+  sort -u >intermediate/upper-case-words.txt
+
+This is just upper case words, including the first word of sentences, 
+exclaimations, Dramatic Capitalization, places, etc.
+It also naïvely does not find constructions such as "the boy" or "the wizard".
+I have chosen to *not* fold into lower case before de-duping,
+although this reduces the count from 2957 to 2762 -- 
+a 7% saving which would be valuable in our next step.
+I have also chosen not to remove dictionary words, 
+in order to retain constructs such as "King of the Crows".
+
+Human intervention will be required at this point to winnow and munge this 
+word list into a set of terms which we can then use to search our corpus.
